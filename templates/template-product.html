@@ -50,7 +50,7 @@
       }
 
       .heading{
-        
+
         font-size: 4.25rem;
         font-weight: 700rem;
         text-transform: uppercase;
@@ -65,23 +65,22 @@
       }
       .heading:hover{
         transform:skewX(15deg) skewY(5deg);
-      }   
+      }
 
       .cards{
-        display:block
+        display:block;
         min-height: 50rem;
         width: 30rem;
         margin:4rem auto;
-        /*color:black;*/
       }
 
-      .card1{
+      .card{
         display:grid;
         grid-template-columns:repeat(2,1fr);
         grid-template-rows: repeat(3,min-content);
         grid-row-gap:2.5rem;
-         background-image: linear-gradient(to bottom,  #f9f7f6,#f9f7f6);   
-         /*overflow: auto; */
+         background-image: linear-gradient(to bottom,  #f9f7f6,#f9f7f6);
+
           }
 
          .img{
@@ -139,7 +138,7 @@
         box-shadow: 0 2rem 6rem rgba(0,0,0,.4);
         animation:moveInBottom .5s ease-out .2s;
         transition:all .2s;
-        
+
       }
       .btn:hover{
         transform:translateY(-.5rem);
@@ -154,8 +153,8 @@
     transform: translateY(3rem); }
   100% {
     opacity: 1;
-    transform: translate(0); 
-  } 
+    transform: translate(0);
+  }
 }
 .emoji-right{
         font-size: 4rem;
@@ -166,8 +165,13 @@
         font-size: 2rem;
         /*margin-right: 1rem;*/
         color:yellow;
-        
+
       }
+
+      @media only screen and (max-width:634px){
+   .heading{
+    font-size: 3.25rem;
+             }}
 
     </style>
   </head>
@@ -176,17 +180,17 @@
     <div class="container">
       <h1 class="heading"><span class="emoji-right">🚴</span>Node Event<span class="emoji-right">🚴</span></h1>
       <div class="cards">
-         <div class="card{%ID%}">
+         <div class="card">
            <img src="{%IMAGE%}" alt="Cricket" class="img">
-          
-                  <h5 class="sport__name"><span class="emoji-left">🏏</span>{%SPORTNAME%}<span class="emoji-left">🏏</spanj></h5>
+
+                  <h5 class="sport__name"><span class="emoji-left">{%EMOJI%}</span>{%SPORTNAME%}<span class="emoji-left">{%EMOJI%}</span></h5>
                   <p class="sport__description">
                   {%DESCRIPTION%}
-        </p>
+                 </p>
                 <a href="/overview"  class="btn"><span class="emoji-left">👈</span>Back</a>
          </div>
 
-      
+
     </div>
   </body>
 </html>
