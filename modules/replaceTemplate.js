@@ -6,5 +6,5 @@ module.exports =(temp,sport)=>{
 	 output=output.replace(/{%EMOJI%}/g,sport.emoji);
 	 output=output.replace(/{%DESCRIPTION%}/g,sport.description);
 	 output=output.replace(/{%ID%}/g,sport.id);
-
+	return output;
 }

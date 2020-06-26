@@ -15,8 +15,8 @@ const tempCard=fs.readFileSync(`${__dirname}/templates/template-card.html`,'utf-
 const data=fs.readFileSync(`${__dirname}/dev-data/data.json`,'utf-8');
 const dataObj=JSON.parse(data);
 
-// const slugs=dataObj.map(el=>slugify(el.description,{lower:true}));
-// console.log(slugs);
+const slugs=dataObj.map(el=>slugify(el.sportName,{lower:true}));
+console.log(slugs);
 
 const server=http.createServer((req,res)=>{
 	console.log(req.url);
@@ -38,8 +38,9 @@ const server=http.createServer((req,res)=>{
 	}
 	else if(pathname==='/sport'){
 		 res.writeHead(200,{'Content-type':'text/html'});
+		 console.log(query);
 		 const sport = dataObj[query.id];
-         console.log(sport);
+         // console.log(sport);
 		 const output=replaceTemplate(tempSport,sport);
 		res.end(output);
 	}
